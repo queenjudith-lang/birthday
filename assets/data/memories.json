@@ -1,0 +1,83 @@
+{
+  "letter": [
+    "There is a stillness in me whenever I think about you — the kind of quiet that only love makes.",
+    "Twenty-one trips around the sun, and somehow the world only began to make sense when it began to include you.",
+    "I remember the first time I heard you laugh. It rearranged something inside me, gently, the way sunlight rearranges a room.",
+    "If I started writing every reason I love you, the ink would run out before the truth did.",
+    "So today, on the first of July, I am giving you a small part of my heart — folded inside these pages.",
+    "Happy 21st, my Beavel. The best chapter is the one we are still writing."
+  ],
+  "reasons": [
+    "Your smile.",
+    "Your kindness.",
+    "The way you believe in me.",
+    "Your laugh — my favorite sound.",
+    "Your beautiful heart.",
+    "How safe you make me feel.",
+    "The little crinkle in your eyes when you're happy.",
+    "The way you say my name.",
+    "Your patience with me.",
+    "Your dreams.",
+    "Your strength on the hard days.",
+    "Your softness on the easy ones.",
+    "The way you love your people.",
+    "How thoughtful you are.",
+    "Your handwriting.",
+    "The songs you put on repeat.",
+    "How you make ordinary days feel like ceremonies.",
+    "Your courage.",
+    "Your honesty.",
+    "The future I see when I look at you.",
+    "Everything about you."
+  ],
+  "timeline": [
+    {
+      "title": "First Conversation",
+      "when": "The day everything changed",
+      "text": "Three words from you, and the universe quietly rearranged its furniture."
+    },
+    {
+      "title": "First Date",
+      "when": "An evening I remember in colors",
+      "text": "You laughed at something silly I said, and I knew."
+    },
+    {
+      "title": "Favorite Memory",
+      "when": "A perfect ordinary day",
+      "text": "We were doing nothing, and it felt like everything."
+    },
+    {
+      "title": "Funniest Moment",
+      "when": "I still laugh in private",
+      "text": "Some stories are too good to share — this one is ours."
+    },
+    {
+      "title": "Biggest Adventure",
+      "when": "We were brave together",
+      "text": "Wherever we went, the world arrived later than we did."
+    },
+    {
+      "title": "Future Dreams",
+      "when": "Yet to come",
+      "text": "A home with windows that face the light. You, beside me. Always."
+    }
+  ],
+  "gallery": [
+    { "src": "assets/images/gallery/IMG_20251212_174654_666.jpg", "caption": "That golden afternoon" },
+    { "src": "assets/images/gallery/IMG_20260117_130539_644.jpg", "caption": "You, in the kitchen, dancing" },
+    { "src": "assets/images/gallery/IMG-20260120-WA0027.jpg", "caption": "Stolen moment" },
+    { "src": "assets/images/gallery/IMG-20260124-WA0010.jpg", "caption": "The walk we did twice" },
+    { "src": "assets/images/gallery/IMG20260320123930.jpg", "caption": "Quiet, the good kind" },
+    { "src": "assets/images/gallery/IMG-20260508-WA0018.jpg", "caption": "Just us" },
+    { "src": "assets/images/gallery/IMG-20260508-WA0027.jpg", "caption": "The smile I keep" },
+    { "src": "assets/images/gallery/IMG-20260508-WA0037.jpg", "caption": "You, beautifully" },
+    { "src": "assets/images/gallery/IMG-20260508-WA0043.jpg", "caption": "An ordinary day. Sacred." },
+    { "src": "assets/images/gallery/IMG-20260510-WA0038.jpg", "caption": "Our first dance" },
+    { "src": "assets/images/gallery/IMG-20260510-WA0039.jpg", "caption": "That look" },
+    { "src": "assets/images/gallery/IMG-20260510-WA0041.jpg", "caption": "Side by side" },
+    { "src": "assets/images/gallery/IMG-20260510-WA0042.jpg", "caption": "The good old days" },
+    { "src": "assets/images/gallery/IMG-20260510-WA0043.jpg", "caption": "A moment frozen in time" },
+    { "src": "assets/images/gallery/IMG-20260510-WA0045.jpg", "caption": "Always together" },
+    { "src": "assets/images/gallery/IMG-20260510-WA0046.jpg", "caption": "Forever yours" }
+  ]
+}

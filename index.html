@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================================
+       For Beavel Nyawira — A Cinematic 21st Birthday Experience
+       Crafted as a love story in eleven chapters.
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#2a0712" />
+  <meta name="description" content="A cinematic 21st birthday letter for Beavel Nyawira — a journey through our love story." />
+  <meta name="author" content="Forever Yours" />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="For Beavel Nyawira — Happy 21st Birthday" />
+  <meta property="og:description" content="A private cinematic love letter — eleven chapters of us." />
+  <meta property="og:type" content="website" />
+
+  <title>For Beavel — A Love Story</title>
+
+  <!-- Preconnect to font CDN for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Luxury typography pairing: Cormorant (display), Cormorant Garamond (serif),
+       Inter (UI), Dancing Script & Great Vibes (handwriting) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Cormorant:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Favicon (inline SVG heart) -->
+  <link
+    rel="icon"
+    href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path fill='%23c4163b' d='M16 28S4 20 4 12a6 6 0 0 1 12-2 6 6 0 0 1 12 2c0 8-12 16-12 16z'/></svg>"
+  />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="no-scroll" data-chapter="0">
+
+  <!-- ============================================================
+       AMBIENT LAYERS (live behind every chapter)
+       ============================================================ -->
+
+  <!-- Cursor glow + trailing hearts -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <canvas id="cursor-hearts" class="cursor-hearts" aria-hidden="true"></canvas>
+
+  <!-- Global particle/petal canvas (used for petals & golden particles) -->
+  <canvas id="petals-canvas" class="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Chapter-to-chapter cinematic wipe -->
+  <div class="page-wipe" aria-hidden="true">
+    <span class="wipe-bar"></span>
+    <span class="wipe-bar"></span>
+    <span class="wipe-bar"></span>
+  </div>
+
+  <!-- ============================================================
+       GLASS NAVIGATION (revealed after unlock)
+       ============================================================ -->
+  <nav class="glass-nav" aria-label="Chapter navigation" hidden>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Open chapters">
+      <span></span><span></span><span></span>
+    </button>
+    <ol id="nav-list" class="nav-list">
+      <li><button data-goto="2">The Beginning</button></li>
+      <li><button data-goto="3">Preparing</button></li>
+      <li><button data-goto="4">The Envelope</button></li>
+      <li><button data-goto="5">The Movie</button></li>
+      <li><button data-goto="6">The Letter</button></li>
+      <li><button data-goto="7">Memories</button></li>
+      <li><button data-goto="8">Our Journey</button></li>
+      <li><button data-goto="9">21 Reasons</button></li>
+      <li><button data-goto="10">The Cake</button></li>
+      <li><button data-goto="11">Finale</button></li>
+    </ol>
+  </nav>
+
+  <!-- Music + control dock -->
+  <div class="control-dock" hidden>
+    <button id="music-toggle" class="dock-btn" aria-label="Play music">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+    </button>
+    <button id="mute-toggle" class="dock-btn" aria-label="Mute">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+    </button>
+    <button id="fullscreen-toggle" class="dock-btn" aria-label="Toggle fullscreen">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+    </button>
+    <audio id="bg-music" loop preload="auto">
+      <!-- The user can drop any .mp3 / .m4a / .ogg here -->
+      <source src="assets/music/Yiruma ??? - River Flows in You.mp3" type="audio/mpeg" />
+    </audio>
+  </div>
+
+  <!-- Chapter progress indicator -->
+  <div class="chapter-progress" hidden>
+    <span class="chapter-progress__label">Chapter <em id="chapter-num">1</em> / 11</span>
+    <span class="chapter-progress__bar"><i id="chapter-fill"></i></span>
+  </div>
+
+  <!-- ============================================================
+       MAIN — All eleven chapters live here
+       ============================================================ -->
+  <main id="story">
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+         CHAPTER 1 · THE LOCK
+         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section class="chapter chapter--lock is-active" id="chapter-1" data-chapter-id="1">
+      <div class="lock__glow" aria-hidden="true"></div>
+
+      <div class="lock__portrait" aria-hidden="true">
+        <div class="portrait-frame">
+          <div class="portrait-image" id="hero-portrait"></div>
+          <div class="portrait-ring"></div>
+        </div>
+      </div>
+
+      <div class="lock__content">
+        <p class="kicker">A surprise · 01 · 07 · 2025</p>
+        <h1 class="display-1">For Beavel Nyawira</h1>
+        <p class="lock__subtitle">This surprise belongs to only one person.</p>
+
+        <form class="keypad" id="keypad" autocomplete="off" novalidate>
+          <div class="keypad__display" aria-live="polite">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          </div>
+          <div class="keypad__grid" role="group" aria-label="Numeric passcode">
+            <button type="button" data-key="1">1</button>
+            <button type="button" data-key="2">2</button>
+            <button type="button" data-key="3">3</button>
+            <button type="button" data-key="4">4</button>
+            <button type="button" data-key="5">5</button>
+            <button type="button" data-key="6">6</button>
+            <button type="button" data-key="7">7</button>
+            <button type="button" data-key="8">8</button>
+            <button type="button" data-key="9">9</button>
+            <button type="button" data-key="hint" class="keypad__hint" aria-label="Hint">?</button>
+            <button type="button" data-key="0">0</button>
+            <button type="button" data-key="back" class="keypad__back" aria-label="Delete">⌫</button>
+          </div>
+          <p class="keypad__hint-text" id="keypad-hint">Hint · the day you arrived.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+         CHAPTER 2 · THE BEGINNING (starry sky)
+         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section class="chapter chapter--beginning" id="chapter-2" data-chapter-id="2">
+      <canvas class="stars-canvas" id="stars-canvas" aria-hidden="true"></canvas>
+
+      <div class="beginning__center">
+        <p class="kicker kicker--gold">Once upon a Tuesday</p>
+        <h2 class="display-2 beginning__date" aria-label="01 July 2005">
+          <span class="d">01</span>
+          <span class="sep">•</span>
+          <span class="m">July</span>
+          <span class="sep">•</span>
+          <span class="y">2005</span>
+        </h2>
+        <p class="beginning__quote">The day someone extraordinary came into this world.</p>
+        <button class="ghost-btn" data-next="3">Continue</button>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+         CHAPTER 3 · PREPARING YOUR SURPRISE
+         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section class="chapter chapter--preparing" id="chapter-3" data-chapter-id="3">
+      <div class="preparing__inner">
+        <p class="kicker">Preparing your surprise</p>
+
+        <div class="word-stage" aria-hidden="true">
+          <span class="floating-word">Smile</span>
+          <span class="floating-word">Hope</span>
+          <span class="floating-word">Love</span>
+          <span class="floating-word">Peace</span>
+          <span class="floating-word">Home</span>
+          <span class="floating-word merged">Beavel Nyawira</span>
+        </div>
+
+        <div class="loader-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <i id="loader-fill"></i>
+        </div>
+        <p class="loader-percent"><span id="loader-percent">0</span>%</p>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+         CHAPTER 4 · THE ENVELOPE
+         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section class="chapter chapter--envelope" id="chapter-4" data-chapter-id="4">
+      <div class="envelope-stage">
+        <p class="kicker kicker--gold">A letter, sealed with love</p>
+
+        <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open the envelope">
+          <div class="envelope__back"></div>
+          <div class="envelope__letter">
+            <span class="letter-monogram">B<small>·</small>N</span>
+            <p class="letter-mini">My dearest Beavel…</p>
+          </div>
+          <div class="envelope__front"></div>
+          <div class="envelope__flap"></div>
+
+          <button class="wax-seal" id="wax-seal" aria-label="Break the wax seal">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <defs>
+                <radialGradient id="waxGrad" cx="35%" cy="30%" r="70%">
+                  <stop offset="0%" stop-color="#ff6479"/>
+                  <stop offset="55%" stop-color="#b51231"/>
+                  <stop offset="100%" stop-color="#4d0617"/>
+                </radialGradient>
+              </defs>
+              <circle cx="50" cy="50" r="42" fill="url(#waxGrad)"/>
+              <text x="50" y="60" text-anchor="middle" font-family="Great Vibes, cursive" font-size="38" fill="#f7e6c4">B</text>
+            </svg>
+          </button>
+        </div>
+
+        <p class="envelope__hint">Tap the seal</p>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+         CHAPTER 5 · THE MOVIE
+         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section class="chapter chapter--movie" id="chapter-5" data-chapter-id="5">
+      <video
+        class="movie-bg"
+        id="movie-bg"
+        playsinline
+        muted
+        loop
+        preload="metadata"
+        poster=""
+      >
+        <source src="assets/videos/story.mp4" type="video/mp4" />
+        <source src="assets/videos/story.webm" type="video/webm" />
+      </video>
+
+      <div class="movie__vignette" aria-hidden="true"></div>
+
+      <div class="movie__overlay">
+        <p class="kicker kicker--gold">A short film</p>
+        <h2 class="display-2">The Story of Us</h2>
+        <p class="movie__starring">
+          <span>Starring</span>
+          <em>Me</em>
+          <span class="amp">&amp;</span>
+          <em>Beavel Nyawira</em>
+        </p>
+        <button class="primary-btn" data-next="6">Continue Our Story</button>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+         CHAPTER 6 · INTERACTIVE LOVE LETTER
+         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section class="chapter chapter--letter" id="chapter-6" data-chapter-id="6">
+      <div class="paper">
+        <p class="paper__date">01 · July · 2025</p>
+        <h2 class="paper__greeting">My dearest Beavel,</h2>
+
+        <div class="paper__body" id="letter-body">
+          <!-- Paragraphs are injected by script.js for the typing reveal -->
+        </div>
+
+        <p class="paper__sign">Forever yours,</p>
+        <p class="paper__signature">Mine</p>
+
+        <button class="ghost-btn ghost-btn--dark" data-next="7">Walk through the memories</button>
+      </div>
+
+      <!-- Margin photos slide in as memories are typed -->
+      <div class="paper__photos" aria-hidden="true">
+        <figure class="margin-photo" data-photo="1"></figure>
+        <figure class="margin-photo" data-photo="2"></figure>
+        <figure class="margin-photo" data-photo="3"></figure>
+        <figure class="margin-photo" data-photo="4"></figure>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+         CHAPTER 7 · MEMORY GALLERY (scrapbook)
+         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section class="chapter chapter--gallery" id="chapter-7" data-chapter-id="7">
+      <header class="gallery__header">
+        <p class="kicker kicker--gold">Our scrapbook</p>
+        <h2 class="display-2">Moments I keep<br/><em>folded inside my chest.</em></h2>
+      </header>
+
+      <div class="scrapbook" id="scrapbook">
+        <!-- Polaroids are injected from memories.json -->
+      </div>
+
+      <div class="gallery__cta">
+        <button class="ghost-btn" data-next="8">Follow our journey →</button>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" hidden aria-modal="true" role="dialog" aria-label="Memory viewer">
+      <button class="lightbox__close" aria-label="Close">×</button>
+      <button class="lightbox__prev" aria-label="Previous">‹</button>
+      <button class="lightbox__next" aria-label="Next">›</button>
+      <figure class="lightbox__frame">
+        <img id="lightbox-img" alt="" />
+        <figcaption id="lightbox-caption"></figcaption>
+      </figure>
+    </div>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+         CHAPTER 8 · OUR JOURNEY (timeline)
+         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section class="chapter chapter--journey" id="chapter-8" data-chapter-id="8">
+      <header class="journey__header">
+        <p class="kicker kicker--gold">A timeline</p>
+        <h2 class="display-2">Our Journey</h2>
+      </header>
+
+      <ol class="timeline" id="timeline">
+        <!-- Timeline events injected from memories.json -->
+      </ol>
+
+      <div class="journey__cta">
+        <button class="ghost-btn" data-next="9">Twenty-one reasons →</button>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+         CHAPTER 9 · 21 REASONS
+         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section class="chapter chapter--reasons" id="chapter-9" data-chapter-id="9">
+      <header class="reasons__header">
+        <p class="kicker kicker--gold">Twenty-one truths</p>
+        <h2 class="display-2">21 reasons I love you</h2>
+        <p class="reasons__sub">Tap each card. Each one is a piece of why.</p>
+      </header>
+
+      <div class="reasons-grid" id="reasons-grid">
+        <!-- 21 flip cards generated from memories.json -->
+      </div>
+
+      <div class="reasons__cta">
+        <button class="ghost-btn" data-next="10">Make a wish →</button>
+      </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+         CHAPTER 10 · BIRTHDAY CAKE
+         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section class="chapter chapter--cake" id="chapter-10" data-chapter-id="10">
+      <div class="cake__sky" aria-hidden="true"></div>
+
+      <p class="kicker kicker--gold">Close your eyes</p>
+      <h2 class="display-2 cake__title" id="cake-title">Make a Wish</h2>
+
+      <!-- Countdown -->
+      <div class="countdown" id="countdown" aria-hidden="true">
+        <span class="countdown__num">3</span>
+        <span class="countdown__num">2</span>
+        <span class="countdown__num">1</span>
+      </div>
+
+      <!-- SVG Cake -->
+      <div class="cake-stage">
+        <svg class="cake-svg" viewBox="0 0 600 540" role="img" aria-label="Birthday cake">
+          <defs>
+            <linearGradient id="plateGrad" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#f7e6c4"/>
+              <stop offset="100%" stop-color="#c69e60"/>
+            </linearGradient>
+            <linearGradient id="tier1" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#fff7f1"/>
+              <stop offset="100%" stop-color="#f3c8c8"/>
+            </linearGradient>
+            <linearGradient id="tier2" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#fde7ec"/>
+              <stop offset="100%" stop-color="#e9a3ad"/>
+            </linearGradient>
+            <linearGradient id="tier3" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#fbd7df"/>
+              <stop offset="100%" stop-color="#c45f6e"/>
+            </linearGradient>
+            <radialGradient id="flameGrad" cx="50%" cy="60%" r="60%">
+              <stop offset="0%" stop-color="#fff6c0"/>
+              <stop offset="60%" stop-color="#ffb347"/>
+              <stop offset="100%" stop-color="#ff5a3c" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- Plate -->
+          <ellipse cx="300" cy="500" rx="240" ry="20" fill="url(#plateGrad)"/>
+
+          <!-- Tier 3 (base) -->
+          <rect x="100" y="370" width="400" height="120" rx="20" fill="url(#tier3)"/>
+          <path d="M100 380 Q 150 360 200 380 T 300 380 T 400 380 T 500 380 V 400 H 100 Z" fill="#fff" opacity=".55"/>
+
+          <!-- Tier 2 -->
+          <rect x="160" y="270" width="280" height="110" rx="18" fill="url(#tier2)"/>
+          <path d="M160 280 Q 210 262 260 280 T 360 280 T 440 280 V 300 H 160 Z" fill="#fff" opacity=".55"/>
+
+          <!-- Tier 1 (top) -->
+          <rect x="220" y="180" width="160" height="100" rx="14" fill="url(#tier1)"/>
+          <path d="M220 190 Q 260 175 300 190 T 380 190 V 208 H 220 Z" fill="#fff" opacity=".6"/>
+
+          <!-- Candles (5) -->
+          <g class="candles" id="candles">
+            <g class="candle" data-candle="1">
+              <rect x="240" y="120" width="10" height="60" rx="3" fill="#f7e6c4"/>
+              <circle class="wick" cx="245" cy="120" r="2" fill="#3b1f0f"/>
+              <ellipse class="flame" cx="245" cy="108" rx="9" ry="18" fill="url(#flameGrad)"/>
+            </g>
+            <g class="candle" data-candle="2">
+              <rect x="270" y="110" width="10" height="70" rx="3" fill="#f7e6c4"/>
+              <circle class="wick" cx="275" cy="110" r="2" fill="#3b1f0f"/>
+              <ellipse class="flame" cx="275" cy="98" rx="9" ry="18" fill="url(#flameGrad)"/>
+            </g>
+            <g class="candle" data-candle="3">
+              <rect x="300" y="100" width="10" height="80" rx="3" fill="#f7e6c4"/>
+              <circle class="wick" cx="305" cy="100" r="2" fill="#3b1f0f"/>
+              <ellipse class="flame" cx="305" cy="88" rx="10" ry="20" fill="url(#flameGrad)"/>
+            </g>
+            <g class="candle" data-candle="4">
+              <rect x="330" y="110" width="10" height="70" rx="3" fill="#f7e6c4"/>
+              <circle class="wick" cx="335" cy="110" r="2" fill="#3b1f0f"/>
+              <ellipse class="flame" cx="335" cy="98" rx="9" ry="18" fill="url(#flameGrad)"/>
+            </g>
+            <g class="candle" data-candle="5">
+              <rect x="360" y="120" width="10" height="60" rx="3" fill="#f7e6c4"/>
+              <circle class="wick" cx="365" cy="120" r="2" fill="#3b1f0f"/>
+              <ellipse class="flame" cx="365" cy="108" rx="9" ry="18" fill="url(#flameGrad)"/>
+            </g>
+          </g>
+        </svg>
+
+        <button class="blow-btn" id="blow-btn" aria-label="Blow the candles">Blow the candles</button>
+      </div>
+
+      <canvas class="confetti-canvas" id="cake-confetti" aria-hidden="true"></canvas>
+    </section>
+
+    <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+         CHAPTER 11 · FINALE
+         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+    <section class="chapter chapter--finale" id="chapter-11" data-chapter-id="11">
+      <canvas class="fireworks-canvas" id="fireworks-canvas" aria-hidden="true"></canvas>
+
+      <div class="finale__center">
+        <p class="kicker kicker--gold">At last</p>
+        <h2 class="display-1 finale__title">
+          <span>Happy 21<sup>st</sup> Birthday</span>
+          <em>Beavel Nyawira</em>
+        </h2>
+
+        <blockquote class="finale__quote">
+          <span>“If I had a thousand lifetimes,</span>
+          <span>I’d still look for you in every one.”</span>
+        </blockquote>
+
+        <p class="finale__sign">Forever Yours,</p>
+        <p class="finale__signature">Mine</p>
+
+        <button class="ghost-btn ghost-btn--gold" id="replay-btn">Replay our story</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       OPTIONAL VENDOR LIBRARIES (loaded from CDN, all optional —
+       script.js gracefully degrades if a library fails to load)
+       ============================================================ -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    defer
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    defer
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"
+    defer
+  ></script>
+
+  <!-- Our orchestrator -->
+  <script src="script.js" defer></script>
+</body>
+</html>
